@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 
+apply from: "../buildsystem/libraries.gradle"
+
 android {
     compileSdkVersion 28
 
@@ -21,8 +23,11 @@ android {
     }
 
 }
+def library = ext.libs
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "${library.circle}"
 
 }
