@@ -15,7 +15,7 @@ import com.hannesdorfmann.mosby3.mvi.MviFragment
 class LoginFragment : MviFragment<LoginView,LoginPresenter>() {
 
     override fun createPresenter(): LoginPresenter {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return LoginPresenter()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

@@ -1,12 +1,18 @@
 package com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.Presenter
 
+import com.example.stanislau_bushuk.eas.DI.Login.LoginComponent
+import com.example.stanislau_bushuk.eas.DI.Login.LoginComponentImpl
+import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.Model.LoginNetWorkModel
 import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.View.LoginView
 import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.ViewState.LoginViewState
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
-import com.hannesdorfmann.mosby3.mvi.MviPresenter
 
-class LoginPresenter : MviBasePresenter <LoginView,LoginViewState>() {
+class LoginPresenter : MviBasePresenter<LoginView, LoginViewState>() {
+
+    private val loginComponent : LoginComponent by lazy { LoginComponentImpl() }
+
     override fun bindIntents() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //TODO :{bind intent login component}
     }
+
 }

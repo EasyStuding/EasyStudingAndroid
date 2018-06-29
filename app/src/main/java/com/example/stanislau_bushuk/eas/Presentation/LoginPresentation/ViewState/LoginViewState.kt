@@ -2,6 +2,6 @@ package com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.ViewStat
 
 sealed class LoginViewState {
     object LoadingState : LoginViewState()
-    data class StartRegistrationComplete(val id : Int, val telephoneNumber: String)
-    data class StartRegistrationError(val errorMessage : String)
+    data class authorize(val login : String, val password: String)
+    data class authorizeError(val errorMessage : String)
 }

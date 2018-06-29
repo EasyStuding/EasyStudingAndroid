@@ -1,4 +1,4 @@
-package com.example.stanislau_bushuk.eas.DI.modules
+package com.example.stanislau_bushuk.eas.DI.Global.modules
 
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder

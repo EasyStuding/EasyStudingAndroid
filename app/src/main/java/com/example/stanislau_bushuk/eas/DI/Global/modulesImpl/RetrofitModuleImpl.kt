@@ -1,7 +1,7 @@
-package com.example.stanislau_bushuk.eas.DI.modulesImpl
+package com.example.stanislau_bushuk.eas.DI.Global.modulesImpl
 
 import com.example.stanislau_bushuk.eas.Api.IApi
-import com.example.stanislau_bushuk.eas.DI.modules.RetrofitModule
+import com.example.stanislau_bushuk.eas.DI.Global.modules.RetrofitModule
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

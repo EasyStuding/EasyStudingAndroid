@@ -1,6 +1,6 @@
-package com.example.stanislau_bushuk.eas.DI.modulesImpl
+package com.example.stanislau_bushuk.eas.DI.Global.modulesImpl
 
-import com.example.stanislau_bushuk.eas.DI.modules.CiceroneModule
+import com.example.stanislau_bushuk.eas.DI.Global.modules.CiceroneModule
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.Router
