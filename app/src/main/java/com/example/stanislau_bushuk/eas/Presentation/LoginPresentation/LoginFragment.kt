@@ -44,4 +44,9 @@ class LoginFragment : MviFragment<LoginView, LoginPresenter>(), LoginView {
         super.onViewCreated(view, savedInstanceState)
         login_screen_main.requestFocus()
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        //TODO {save login and password to instance}
+    }
 }
