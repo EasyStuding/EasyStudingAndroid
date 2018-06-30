@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Margins & Padding -->
-    <dimen name="margin_padding_size_small">8dp</dimen>
-    <dimen name="margin_padding_size_medium">16dp</dimen>
-    <dimen name="margin_padding_size_large">32dp</dimen>
-    
+    <!-- Padding -->
+    <dimen name="margin_size_small">8dp</dimen>
+    <dimen name="margin_size_medium">16dp</dimen>
+    <dimen name="margin_size_large">32dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="padding_size_small">2dp</dimen>
+    <dimen name="padding_size_medium">4dp</dimen>
+    <dimen name="padding_size_large">8dp</dimen>
+
     <!--Login Screen -->
     <dimen name="login_screen_image_size">156dp</dimen>
 

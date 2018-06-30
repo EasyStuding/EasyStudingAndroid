@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/login_screen_main"
+    android:descendantFocusability="beforeDescendants"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
     tools:context=".Presentation.LoginPresentation.LoginFragment">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -11,8 +14,9 @@
         android:layout_width="@dimen/login_screen_image_size"
         android:layout_height="@dimen/login_screen_image_size"
         android:layout_marginBottom="56dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="@dimen/margin_size_small"
+        android:layout_marginStart="@dimen/margin_size_small"
+        android:layout_marginTop="@dimen/margin_size_medium"
         android:src="@drawable/main_ic"
         app:background="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/login_screen_login"
@@ -25,38 +29,78 @@
         android:id="@+id/login_screen_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_padding_size_large"
-        android:layout_marginStart="@dimen/margin_padding_size_large"
-        android:hint="PIDOR"
+        android:layout_marginBottom="@dimen/margin_size_small"
+        android:layout_marginEnd="@dimen/margin_size_large"
+        android:layout_marginStart="@dimen/margin_size_large"
+        android:hint="Login"
 
+        android:inputType="textVisiblePassword"
         app:layout_constraintBottom_toTopOf="@+id/login_screen_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_user_photo" />
+
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_photo"
+        app:layout_goneMarginBottom="@dimen/margin_size_large" />
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/login_screen_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="@dimen/margin_padding_size_large"
-        android:layout_marginStart="@dimen/margin_padding_size_large"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/margin_size_large"
+        android:layout_marginStart="@dimen/margin_size_large"
+        android:layout_marginTop="@dimen/margin_size_small"
         android:hint="PASSWORD"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/login_screen_forgot_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_screen_login" />
 
+    <TextView
+        android:id="@+id/login_screen_forgot_password"
+        style="@style/Body_1.accent_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/login_screen_forgot_password"
+        app:layout_constraintBottom_toTopOf="@+id/login_screen_auth_button"
+        app:layout_constraintEnd_toEndOf="@+id/login_screen_password"
+        app:layout_constraintTop_toBottomOf="@+id/login_screen_password" />
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login_screen_auth_button"
+        style="@style/Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:text="Button"
+        android:layout_marginEnd="@dimen/margin_size_large"
+        android:layout_marginStart="@dimen/margin_size_large"
+        android:layout_marginTop="@dimen/margin_size_large"
+        android:text="Sign in"
+        app:layout_constraintBottom_toTopOf="@+id/login_screen_do_not_have_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_screen_forgot_password" />
+
+    <TextView
+        android:id="@+id/login_screen_do_not_have_account"
+        style="@style/Subheading.white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_size_medium"
+        android:text="@string/login_screen_do_not_have_account"
+        app:layout_constraintBottom_toTopOf="@+id/login_screen_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/login_screen_register"
+        style="@style/Button.accent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_size_large"
+        android:text="@string/login_screen_register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
