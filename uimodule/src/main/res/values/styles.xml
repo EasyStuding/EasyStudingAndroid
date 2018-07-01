@@ -74,6 +74,10 @@
         <item name="android:fontFamily">sans-serif</item>
     </style>
 
+    <style name="Body_1.accent_color">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
     <style name="search_view_text">
         <item name="android:textColor">@color/white</item>
         <item name="android:queryHint">@color/white</item>
@@ -93,6 +97,10 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="Button.accent">
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
 </resources>

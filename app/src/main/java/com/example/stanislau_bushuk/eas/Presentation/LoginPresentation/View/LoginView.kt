@@ -1,7 +1,16 @@
 package com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.View
 
+import com.example.stanislau_bushuk.eas.Api.PostModels.AuthModel
+import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.ViewState.LoginViewState
 import com.hannesdorfmann.mosby3.mvp.MvpView
+import io.reactivex.Observable
 
 interface LoginView : MvpView {
-    //TODO:{ Add logic for LoginView}
+
+    fun authorization():Observable<AuthModel>
+
+    fun registration():Observable<Unit>
+
+    fun render(state : LoginViewState)
+
 }

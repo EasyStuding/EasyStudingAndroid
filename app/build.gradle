@@ -41,6 +41,8 @@ dependencies {
     implementation "${library.retrofit2Rxjava2Adapter}"
     implementation "${library.rxandroid}"
     implementation "${library.rxbinding}"
+    implementation "${library.rxbindingSup4}"
+    implementation "${library.rxbindingSup7}"
     ///
 
     /////RETROFIT/////
@@ -50,7 +52,6 @@ dependencies {
 
     /////GLIDE/////
     implementation "${library.glide}"
-    implementation 'com.android.support:support-v4:28.0.0-alpha3'
     annotationProcessor "${library.glideCompiler}"
     ////
 
@@ -59,6 +60,9 @@ dependencies {
 
     //MosbyMVI
     implementation "${library.mosby}"
+
+    //TelephoneMask
+    implementation "${library.telephoneMask}"
 
     implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
