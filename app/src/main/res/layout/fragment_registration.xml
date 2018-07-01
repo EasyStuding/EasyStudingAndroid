@@ -1,10 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Presentation.RegistrationPresentation.RegistrationFragment">
 
-    <!-- TODO: Draw Registration Screen -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_user_photo"
+        android:layout_width="@dimen/login_screen_image_size"
+        android:layout_height="@dimen/login_screen_image_size"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/main_ic"
+        app:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/registration_screen_telephone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
-</FrameLayout>
+    <com.github.pinball83.maskededittext.MaskedEditText
+        android:id="@+id/registration_screen_telephone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/registration_screen_verification_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_photo"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_goneMarginBottom="@dimen/margin_size_large"
+        app:mask="+(***) - *** - ** - **"
+        app:replacementChar="#"
+        app:deleteChar="#"
+        app:notMaskedSymbol="*" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/registration_screen_verification_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:hint="code"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/registration_screen_verification_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_screen_telephone"
+        app:layout_goneMarginBottom="@dimen/margin_size_large" />
+
+    <Button
+        android:id="@+id/registration_screen_verification_button"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Get message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_screen_verification_number" />
+
+
+</android.support.constraint.ConstraintLayout>

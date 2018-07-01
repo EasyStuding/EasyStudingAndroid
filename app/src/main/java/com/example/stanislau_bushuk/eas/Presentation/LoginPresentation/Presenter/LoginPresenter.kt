@@ -23,7 +23,9 @@ class LoginPresenter : MviBasePresenter<LoginView, LoginViewState>() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .switchMap { loginComponent.loginModel.goToRegistration() }
 
-        val loginStateObservable : Observable<LoginViewState> = Observable.merge(authState,registration)
+
+        val loginStateObservable : Observable<LoginViewState> = Observable
+                .merge(authState,registration)
 
         subscribeViewState(loginStateObservable, LoginView::render)
 

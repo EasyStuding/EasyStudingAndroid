@@ -12,9 +12,9 @@ class LoginModel : ResultListener {
 
     }
 
-    fun goToRegistration():Observable<LoginViewState>{
-        App.component.cicerone.router.setResultListener(Constants.REGISTRATION_SUCCESSFUL,this)
+    fun goToRegistration(): Observable<LoginViewState> {
+        App.component.cicerone.router.setResultListener(Constants.REGISTRATION_SUCCESSFUL, this)
         App.component.cicerone.router.navigateTo(Constants.REGISTRATION_SCREEN)
-        return Observable.create {  }
+        return Observable.create { }
     }
 }

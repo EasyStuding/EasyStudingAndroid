@@ -26,7 +26,10 @@ ext.version = [
 
         ////Design///
         support                : "28.0.0-alpha3",
-        constraint             : "1.1.2"
+        constraint             : "1.1.2",
+
+        //TelephoneMask
+        telephoneMask : "1.0.4"
 ]
 def version = ext.version
 
@@ -66,5 +69,8 @@ ext.libs = [
         circle                 : "de.hdodenhof:circleimageview:" + "$version.cicrleImageViewVersion",
 
         ///cicerone///
-        cicerone               : "ru.terrakok.cicerone:cicerone:" + "$version.cicerone"
+        cicerone               : "ru.terrakok.cicerone:cicerone:" + "$version.cicerone",
+
+        //TelephoneMask
+        telephoneMask:  "com.github.pinball83:masked-edittext:"+"$version.telephoneMask"
 ]

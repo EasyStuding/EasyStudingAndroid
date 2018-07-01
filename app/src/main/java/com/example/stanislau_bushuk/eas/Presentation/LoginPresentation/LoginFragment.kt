@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.stanislau_bushuk.eas.Pojo.AuthModel
+import com.example.stanislau_bushuk.eas.Api.PostModels.AuthModel
 import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.Presenter.LoginPresenter
 import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.View.LoginView
 import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.ViewState.LoginViewState
@@ -14,15 +14,18 @@ import com.hannesdorfmann.mosby3.mvi.MviFragment
 import com.jakewharton.rxbinding2.view.clicks
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_login.*
+import timber.log.Timber
 
 class LoginFragment : MviFragment<LoginView, LoginPresenter>(), LoginView {
 
     override fun registration(): Observable<Unit> = login_screen_register.clicks()
 
     override fun render(state: LoginViewState) {
+        Timber.e("RENDER")
         when (state) {
             is LoginViewState.AuthorizeError -> {
             }
+
         }
     }
 
@@ -42,11 +45,8 @@ class LoginFragment : MviFragment<LoginView, LoginPresenter>(), LoginView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         login_screen_main.requestFocus()
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        //TODO {save login and password to instance}
-    }
 }
