@@ -18,14 +18,14 @@ class LoginPresenter : MviBasePresenter<LoginView, LoginViewState>() {
         val authState: Observable<LoginViewState> = intent(LoginView::authorization)
                 .observeOn(Schedulers.io())
                 .switchMap { loginComponent.loginNetWorkModel.authorize(it.login, it.password) }
+                .observeOn(AndroidSchedulers.mainThread())
 
-        val registration : Observable<LoginViewState> = intent(LoginView::registration)
+        val registration: Observable<LoginViewState> = intent(LoginView::registration)
                 .observeOn(AndroidSchedulers.mainThread())
                 .switchMap { loginComponent.loginModel.goToRegistration() }
 
-
-        val loginStateObservable : Observable<LoginViewState> = Observable
-                .merge(authState,registration)
+        val loginStateObservable: Observable<LoginViewState> = Observable
+                .merge(authState, registration)
 
         subscribeViewState(loginStateObservable, LoginView::render)
 
