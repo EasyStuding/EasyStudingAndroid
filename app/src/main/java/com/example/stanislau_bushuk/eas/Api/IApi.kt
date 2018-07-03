@@ -1,5 +1,6 @@
 package com.example.stanislau_bushuk.eas.Api
 
+import com.example.stanislau_bushuk.eas.Api.PostModels.CompleteAuthModel
 import com.example.stanislau_bushuk.eas.Api.PostModels.TelephoneNumber
 import com.example.stanislau_bushuk.eas.Api.PostModels.ValidateSMSModel
 import com.example.stanislau_bushuk.eas.Pojo.User
@@ -16,6 +17,6 @@ interface IApi {
     fun validateRegistration(@Body validateModel: ValidateSMSModel): Observable<User>
 
     @POST("session/CompleteRegistration/")
-    fun completeAuth(@Body validateModel: ValidateSMSModel): Observable<User>
+    fun completeAuth(@Body authModel: CompleteAuthModel): Observable<User>
 
 }
