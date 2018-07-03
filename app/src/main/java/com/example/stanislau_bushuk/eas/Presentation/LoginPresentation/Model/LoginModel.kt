@@ -9,7 +9,7 @@ import ru.terrakok.cicerone.result.ResultListener
 class LoginModel : ResultListener {
 
     override fun onResult(resultData: Any?) {
-
+        //TODO {add result go to main Screen}
     }
 
     fun goToRegistration(): Observable<LoginViewState> {
