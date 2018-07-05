@@ -25,7 +25,7 @@ class RegistrationFragment : MviFragment<RegistrationView, RegistrationPresenter
             .filter { it -> it.length == Constants.VALIDATE_CODE_LENGTH }
 
     override fun sendSMS(): Observable<TelephoneNumber> = registration_screen_verification_button.clicks().switchMap {
-        Observable.just(TelephoneNumber(registration_screen_telephone.unmaskedText))
+        Observable.just(TelephoneNumber("+"+registration_screen_telephone.unmaskedText))
     }
 
     override fun render(state: RegistrationViewState) {

@@ -7,12 +7,15 @@ import timber.log.Timber
 
 class App : Application() {
 
+
     companion object {
-        val component: GlobalComponent by lazy { GlobalComponentImpl() }
+        lateinit var component: GlobalComponent
     }
+
 
     override fun onCreate() {
         super.onCreate()
+        component = GlobalComponentImpl(applicationContext)
 
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())

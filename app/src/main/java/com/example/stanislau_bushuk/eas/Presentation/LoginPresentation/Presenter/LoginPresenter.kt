@@ -19,6 +19,7 @@ class LoginPresenter : MviBasePresenter<LoginView, LoginViewState>() {
                 .observeOn(Schedulers.io())
                 .switchMap { loginComponent.loginNetWorkModel.authorize(it.login, it.password) }
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext { loginComponent.loginModel.goToRegistration() }
 
         val registration: Observable<LoginViewState> = intent(LoginView::registration)
                 .observeOn(AndroidSchedulers.mainThread())

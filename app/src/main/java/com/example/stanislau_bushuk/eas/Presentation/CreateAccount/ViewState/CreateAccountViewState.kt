@@ -1,6 +1,6 @@
 package com.example.stanislau_bushuk.eas.Presentation.CreateAccount.ViewState
 
-import com.example.stanislau_bushuk.eas.Pojo.Account
+import com.example.stanislau_bushuk.eas.Room.Entitiys.Account
 
 sealed class CreateAccountViewState {
 

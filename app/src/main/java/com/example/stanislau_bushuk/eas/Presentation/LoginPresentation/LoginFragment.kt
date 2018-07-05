@@ -21,7 +21,6 @@ class LoginFragment : MviFragment<LoginView, LoginPresenter>(), LoginView {
     override fun registration(): Observable<Unit> = login_screen_register.clicks()
 
     override fun render(state: LoginViewState) {
-        Timber.e("RENDER")
         when (state) {
             is LoginViewState.AuthorizeError -> {
             }

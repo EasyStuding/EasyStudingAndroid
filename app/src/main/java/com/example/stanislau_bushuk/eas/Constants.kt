@@ -7,7 +7,7 @@ object Constants {
 
     const val CREATE_ACCOUNT_SCREEN: String = "CREATE_ACCOUNT_SCREEN"
 
-    const val REGISTRATION_SUCCESSFUL: Int = 1
-
     const val VALIDATE_CODE_LENGTH: Int = 6
+
+    const val MAIN_SCREEN : String = "MAIN_SCREEN"
 }

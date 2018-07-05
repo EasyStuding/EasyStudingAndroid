@@ -6,15 +6,10 @@ import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.ViewState
 import io.reactivex.Observable
 import ru.terrakok.cicerone.result.ResultListener
 
-class LoginModel : ResultListener {
+class LoginModel {
 
-    override fun onResult(resultData: Any?) {
-        //TODO {add result go to main Screen}
-    }
-
-    fun goToRegistration(): Observable<LoginViewState> {
-        App.component.cicerone.router.setResultListener(Constants.REGISTRATION_SUCCESSFUL, this)
-        App.component.cicerone.router.navigateTo(Constants.REGISTRATION_SCREEN)
-        return Observable.create { }
+    fun goToRegistration(): Observable<LoginViewState> = Observable.just(App.component.cicerone
+            .router.navigateTo(Constants.REGISTRATION_SCREEN)).map<LoginViewState> {
+            LoginViewState.AuthNavigateNext(Unit)
     }
 }

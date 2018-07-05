@@ -10,11 +10,9 @@
         android:id="@+id/profile_user_photo"
         android:layout_width="@dimen/login_screen_image_size"
         android:layout_height="@dimen/login_screen_image_size"
-        android:layout_marginBottom="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:src="@drawable/main_ic"
         app:background="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/registration_screen_telephone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,16 +25,16 @@
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
         android:inputType="number"
+        app:deleteChar="#"
         app:layout_constraintBottom_toTopOf="@+id/registration_screen_verification_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_user_photo"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_goneMarginBottom="@dimen/margin_size_large"
-        app:mask="+(***) - *** - ** - **"
-        app:replacementChar="#"
-        app:deleteChar="#"
-        app:notMaskedSymbol="*" />
+        app:mask="+(***) - ** - *** - ** - **"
+        app:notMaskedSymbol="*"
+        app:replacementChar="#" />
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/registration_screen_verification_number"

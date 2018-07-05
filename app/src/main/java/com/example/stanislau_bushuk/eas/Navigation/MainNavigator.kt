@@ -22,6 +22,8 @@ class MainNavigator(activity: FragmentActivity?, containerId: Int) : SupportAppN
             Constants.REGISTRATION_SCREEN->{return RegistrationFragment()}
 
             Constants.CREATE_ACCOUNT_SCREEN->{return CreateAccountFragment()}
+
+            Constants.MAIN_SCREEN->{}
         }
         return null
     }

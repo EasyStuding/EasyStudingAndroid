@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 apply from: "../buildsystem/libraries.gradle"
 
 
@@ -58,10 +60,15 @@ dependencies {
     ///Cicerone///
     implementation "${library.cicerone}"
 
-    //MosbyMVI
+    //MosbyMVI///
     implementation "${library.mosby}"
 
-    //TelephoneMask
+    //ROOM///
+    implementation "${library.room}"
+    kapt  "${library.roomAnnotations}"
+    testImplementation "${library.roomTest}"
+
+    //TelephoneMask///
     implementation "${library.telephoneMask}"
 
     implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
