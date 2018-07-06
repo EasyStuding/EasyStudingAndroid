@@ -9,14 +9,27 @@ import com.example.stanislau_bushuk.eas.Api.PostModels.AuthModel
 import com.example.stanislau_bushuk.eas.Api.PostModels.CompleteAuthModel
 import com.example.stanislau_bushuk.eas.Presentation.CreateAccount.Presenters.CreateAccountPresenter
 import com.example.stanislau_bushuk.eas.Presentation.CreateAccount.View.CreateAccountView
+import com.example.stanislau_bushuk.eas.Presentation.CreateAccount.ViewState.CreateAccountViewState
 import com.example.stanislau_bushuk.eas.R
 import com.hannesdorfmann.mosby3.mvi.MviFragment
 import com.jakewharton.rxbinding2.view.clicks
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_create_account.*
+import timber.log.Timber
 
 
 class CreateAccountFragment : MviFragment<CreateAccountView,CreateAccountPresenter>(), CreateAccountView {
+
+    override fun render(state: CreateAccountViewState) {
+        when (state) {
+            is CreateAccountViewState.CreateAccountSuccessful -> {
+                Timber.e(state.account.accessToken)
+            }
+            is CreateAccountViewState.CreateAccountError ->{
+                Timber.e(state.error.message)
+            }
+        }
+    }
 
 
     override fun createAccount(): Observable<CompleteAuthModel> = create_account_screen_register_button

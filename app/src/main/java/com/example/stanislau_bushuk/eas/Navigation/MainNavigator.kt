@@ -30,7 +30,6 @@ class MainNavigator(activity: FragmentActivity?, containerId: Int) : SupportAppN
 
     override fun createActivityIntent(context: Context?, screenKey: String?, data: Any?): Intent? {
         return null
-//        TODO:{add activity manager here}
     }
 
 }

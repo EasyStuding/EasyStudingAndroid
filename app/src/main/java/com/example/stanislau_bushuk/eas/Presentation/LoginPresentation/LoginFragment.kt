@@ -2,6 +2,7 @@ package com.example.stanislau_bushuk.eas.Presentation.LoginPresentation
 
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.Presenter
 import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.View.LoginView
 import com.example.stanislau_bushuk.eas.Presentation.LoginPresentation.ViewState.LoginViewState
 import com.example.stanislau_bushuk.eas.R
+import com.example.stanislau_bushuk.eas.ServerErrors
 import com.hannesdorfmann.mosby3.mvi.MviFragment
 import com.jakewharton.rxbinding2.view.clicks
 import io.reactivex.Observable
@@ -23,6 +25,8 @@ class LoginFragment : MviFragment<LoginView, LoginPresenter>(), LoginView {
     override fun render(state: LoginViewState) {
         when (state) {
             is LoginViewState.AuthorizeError -> {
+                Timber.e(state.error.message.toString())
+                catchErrors(state.error.message.toString())
             }
 
         }
@@ -46,6 +50,24 @@ class LoginFragment : MviFragment<LoginView, LoginPresenter>(), LoginView {
         super.onViewCreated(view, savedInstanceState)
 
         login_screen_main.requestFocus()
+    }
+
+    private fun catchErrors(error: String) {
+        when (error) {
+
+            ServerErrors.TIMEOUT -> {
+                Snackbar.make(login_screen_auth_button,R.string.server_error_timeout,Snackbar.LENGTH_LONG)
+            }
+
+            ServerErrors.BAD_REQUEST -> {
+                Snackbar.make(login_screen_auth_button,"XUI",Snackbar.LENGTH_LONG)
+            }
+
+            ServerErrors.NOT_FOUND ->{
+                Snackbar.make(login_screen_auth_button,"Incorrect login or password",Snackbar.LENGTH_LONG)
+            }
+
+        }
     }
 
 }

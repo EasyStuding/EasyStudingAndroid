@@ -8,11 +8,7 @@ import android.arch.persistence.room.PrimaryKey
 data class Account(
 
         @PrimaryKey
-        val id: Int,
-
-        val telephoneNumber: String,
-
-        val role: String,
+        val userMe: UserMe,
 
         @ColumnInfo
         val accessToken: String)

@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Easy Studying</string>
+
+
+    <!-- Login Screen  -->
     <string name="login_screen_do_not_have_account">Don`t have an account?</string>
     <string name="login_screen_forgot_password">Forgot your password?</string>
     <string name="login_screen_register">Register</string>
+
+    <!-- Server Errors -->
+    <string name="server_error_timeout">We use free server :), send request one more time</string>
+
 </resources>

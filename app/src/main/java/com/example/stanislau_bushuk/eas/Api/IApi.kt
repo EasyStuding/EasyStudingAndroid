@@ -4,6 +4,7 @@ import com.example.stanislau_bushuk.eas.Api.PostModels.AuthModel
 import com.example.stanislau_bushuk.eas.Api.PostModels.CompleteAuthModel
 import com.example.stanislau_bushuk.eas.Api.PostModels.TelephoneNumber
 import com.example.stanislau_bushuk.eas.Api.PostModels.ValidateSMSModel
+import com.example.stanislau_bushuk.eas.Room.Entitiys.Account
 import com.example.stanislau_bushuk.eas.Room.Entitiys.UserMe
 import io.reactivex.Observable
 import retrofit2.http.Body
@@ -18,7 +19,7 @@ interface IApi {
     fun validateRegistration(@Body validateModel: ValidateSMSModel): Observable<UserMe>
 
     @POST("session/CompleteRegistration/")
-    fun completeAuth(@Body authModel: CompleteAuthModel): Observable<UserMe>
+    fun completeAuth(@Body authModel: CompleteAuthModel): Observable<Account>
 
     @POST("/session/Login/")
     fun authorization(@Body authModel: AuthModel): Observable<UserMe>

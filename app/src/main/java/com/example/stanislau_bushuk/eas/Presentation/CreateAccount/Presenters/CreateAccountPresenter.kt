@@ -6,14 +6,18 @@ import com.example.stanislau_bushuk.eas.Presentation.CreateAccount.View.CreateAc
 import com.example.stanislau_bushuk.eas.Presentation.CreateAccount.ViewState.CreateAccountViewState
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
 import io.reactivex.Observable
+import io.reactivex.schedulers.Schedulers
 
-class CreateAccountPresenter : MviBasePresenter<CreateAccountView,CreateAccountViewState>() {
+class CreateAccountPresenter : MviBasePresenter<CreateAccountView, CreateAccountViewState>() {
 
-    val component: CreateAccountComponent by lazy { CreateAccountComponentImpl() }
+    private val component: CreateAccountComponent by lazy { CreateAccountComponentImpl() }
 
     override fun bindIntents() {
-//        val createAccount : Observable<CreateAccountViewState> = intent(CreateAccountView::createAccount)
-//                .switchMap { component.createAccountNetWorkModel.createAccount() }
-        //TODO :{create intent and subscribe}
+        val createAccount: Observable<CreateAccountViewState> = intent(CreateAccountView::createAccount)
+                .observeOn(Schedulers.io())
+                .subscribeOn(Schedulers.newThread())
+                .switchMap { component.createAccountNetWorkModel.createAccount(it) }
+
+        subscribeViewState(createAccount, CreateAccountView::render)
     }
 }

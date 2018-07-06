@@ -10,7 +10,8 @@ class LoginNetWorkModel {
     private val iApi: IApi = App.component.retrofit
 
     fun authorize(login: String, password: String): Observable<LoginViewState> = iApi
-            .authorization(AuthModel(login, password))//TODO:{change request}
+            .authorization(AuthModel(login, password))
+            .doOnNext { App.component.room.userDao().insertUser(it) }
             .map<LoginViewState> { LoginViewState.AuthSuccessful(it) }
             .onErrorReturn { LoginViewState.AuthorizeError(it) }
 }

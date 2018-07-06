@@ -6,7 +6,7 @@ sealed class CreateAccountViewState {
 
     object Loading : CreateAccountViewState()
 
-    data class CreateAccountSuccessful(val account : Account)
+    data class CreateAccountSuccessful(val account : Account):CreateAccountViewState()
 
-    data class CreateAccountError(val error : Throwable)
+    data class CreateAccountError(val error : Throwable):CreateAccountViewState()
 }

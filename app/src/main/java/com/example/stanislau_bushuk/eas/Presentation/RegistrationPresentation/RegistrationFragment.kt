@@ -25,7 +25,7 @@ class RegistrationFragment : MviFragment<RegistrationView, RegistrationPresenter
             .filter { it -> it.length == Constants.VALIDATE_CODE_LENGTH }
 
     override fun sendSMS(): Observable<TelephoneNumber> = registration_screen_verification_button.clicks().switchMap {
-        Observable.just(TelephoneNumber("+"+registration_screen_telephone.unmaskedText))
+        Observable.just(TelephoneNumber("+"+registration_screen_telephone.unmaskedText.toString()))
     }
 
     override fun render(state: RegistrationViewState) {
@@ -47,6 +47,7 @@ class RegistrationFragment : MviFragment<RegistrationView, RegistrationPresenter
             }
 
             is RegistrationViewState.SendSMSError -> {
+                Timber.e(state.error.message)
                 registration_screen_verification_button.isClickable = true
             }
 
@@ -61,7 +62,5 @@ class RegistrationFragment : MviFragment<RegistrationView, RegistrationPresenter
         return inflater.inflate(R.layout.fragment_registration, container, false)
     }
 
-
-    //TODO: {create presenter,viewstate,view for register, bind intent,bind presenter, extends mvifragment}
 
 }

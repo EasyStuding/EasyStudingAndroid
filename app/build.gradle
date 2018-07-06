@@ -71,8 +71,12 @@ dependencies {
     //TelephoneMask///
     implementation "${library.telephoneMask}"
 
-    implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    //SUPPORT APP//
+    implementation "${library.supportAppcompat}"
+    implementation "${library.supportDesign}"
+    implementation "${library.support}"
+    implementation "${library.constraint}"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
